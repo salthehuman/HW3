@@ -244,9 +244,10 @@ def get_longest_tweet():
             tweet_lengths[tweet.text] = (len(clean_tweet), user, display)
     sorted_tweets = sorted(tweet_lengths.items(), key=lambda x: x[1][0], reverse=True)
     longest_tweet = sorted_tweets[0]
+    longest_tweet_text = longest_tweet[0]
     username = longest_tweet[1][1]
     display_name = longest_tweet[1][2]
-    return render_template('longest_tweet.html', longest_tweet = longest_tweet, username=username, display_name=display_name)
+    return render_template('longest_tweet.html', longest_tweet = longest_tweet_text, username=username, display_name=display_name)
 
 
 # NOTE:
